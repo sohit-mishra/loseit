@@ -1484,7 +1484,9 @@ footer #copyright+p {
     .notice .flexbox {
         display: none;
     }
-
+    #section7 .flexbox{
+        flex-direction: column;
+    }
     footer .flexbox {
         flex-direction: column;
     }
