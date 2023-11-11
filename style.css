@@ -876,13 +876,13 @@ section#section4 .container img {
     padding: 10px 40px;
     position: absolute;
     bottom: 30px;
-    left: 40px;
+    left: 20px; 
 }
 
 #contact #helpbox+i {
     position: fixed;
     bottom: 30px;
-    right: 50px;
+    right: 20px;
     font-size: 22px;
     background-color: #183962;
     color: #fff;
