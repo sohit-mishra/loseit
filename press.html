@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Press Center - Lose It!</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="#"><img src="img/logo.svg" alt="Lose it" /></a>
+            <button onclick="loginPage()" id="login">Login </button>
+        </div>
+        </div>
+    </header>
+
+    <section id="banner">
+        <div class="container">
+            <h2>Press Center</h2>
+        </div>
+    </section>
+
+    <section id="about5">
+        <div class="outerbox">
+            <div class="flexbox">
+                <div class="card">
+                    <img src="img/pounds_like.png" alt="">
+                    <h4>40M+</h4>
+                    <p>members</p>
+                </div>
+                <div class="card">
+                    <img src="img/pounds_press.png" alt="">
+                    <h4>100M+</h4>
+                    <p>pounds lost</p>
+                </div>
+                <div class="card">
+                    <img src="img/pounds_food.png" alt="">
+                    <h4>32M+</h4>
+                    <p>food exercises</p>
+                </div>
+                <div class="card">
+                    <img src="img/pounds_star.png" alt="">
+                    <h4>4.7</h4>
+                    <p>average app store rating</p>
+                </div>
+                <div class="card">
+                    <img src="img/pounds_user.png" alt="">
+                    <h4>1.4M</h4>
+                    <p>monhtly active user</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="press">
+        <div class="flexbox">
+            <img src="img/press.png" alt="">
+            <div class="right">
+                <p>Lose It! is on a mission to change the way people view weight loss. Through the proven approach of
+                    calorie counting, Lose It! empowers our members by providing support, motivation, and the tools they
+                    need for success on their journey to a healthy weight.</p>
+                <p>With the help of the press, we're able to spread the word about Lose It! as a free and effective
+                    weight loss tool. For press inquiries, please email us a press@loseit.com</p>
+                <button>Media Kit</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section7">
+        <div class="container">
+            <h2>Get Started on Mobile</h2>
+            <div class="flexbox">
+                <a href="https://apps.apple.com/us/app/lose-it-calorie-counter/id297368629"><img
+                        src="img/googleplaystore.svg" alt="Play Store" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.fitnow.loseit&"><img src="img/applestore.svg"
+                        alt="Apple Store" /></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="#"><img src="img/FooterLogo.svg" alt="loseit" /></a>
+
+            <div class="flexbox">
+                <div class="left">
+                    <ul>
+                        <li><a href="howitworks.html">How It Works</a></li>
+                        <li><a href="howitworks.html#premium">Premium</a></li>
+                        <li><a href="articles.html">Lose It! Blog</a></li>
+                        <li><a href="help.html">Help Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="middle">
+                    <ul>
+                        <li><a href="press.html">Press & Media Kit</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="partner.html">Partners & API</a></li>
+                        <li><a href="memberstory.html">Share Your Story</a></li>
+                    </ul>
+                </div>
+
+                <div class="right">
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="job.html">Careers</a></li>
+                        <li><a href="diversity.html">Diversity</a></li>
+                        <li><a href="accessibility.html">Accessibility Statement </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flexbox social">
+                <a href="https://www.facebook.com/loseit/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/loseitapp/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Floseit%2F"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.pinterest.com/loseit/"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://www.linkedin.com/company/lose-it-/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+
+            <div id="copyright">
+                <p>Copyright 2008-2023 FitNow, Inc., a Ziff Davis company. All rights reserved</p>
+                <p><a href="privacy.html"> Privacy </a> | <a href="term.html">Terms of Service</a> </p>
+                <p><a href="noticeprivacy.html">Do Not Sell My Personal Information</a> </p>
+            </div>
+
+            <p>Lose It! is among the federally registered trademarks of FitNow, Inc., and may not be used by third
+                parties without explicit permission.</p>
+        </div>
+    </footer>
+
+    <script>
+        var media = document.querySelector("#press .right button");
+        media.addEventListener("click", function () {
+            window.location.href = "pdf/LoseItPressKit.pdf";
+        });
+
+
+        var sum = 0;
+        function myfunction() {
+            var setWidth = document.querySelector("#about5 .flexbox .card");
+            sum += setWidth.offsetWidth;
+            var leftMove = "-" + sum + "px";
+            document.querySelector("#about5 .flexbox").style.left = leftMove;
+            if (sum > setWidth.offsetWidth * 1) {
+                sum = 0 - setWidth.offsetWidth;
+            }
+        }
+
+        setInterval(myfunction, 5000);
+    </script>
+</body>
+
+</html>

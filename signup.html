@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Lose It!</title>
+</head>
+
+<body>
+    <section id="loginPage">
+        <form action="">
+            <img src="img/logo.svg" alt="">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email address</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+
+            <button onclick="appleSign()">Sign Up</button>
+        </form>
+        <p>Already Have account !
+            <a href="login.html"> Log in</a>
+        </p>
+        <hr>
+        <div id="hor"><span>OR</span></div>
+        <button id="applelogin"><i class="fa-brands fa-apple"></i> Sign in with Apple</button>
+    </section>
+
+
+    <footer id="half_footer">
+        <div class="container">
+
+            <div id="copyright">
+                <p>Copyright 2008-2023 FitNow, Inc., a Ziff Davis company. All rights reserved</p>
+                <p><a href="privacy.html"> Privacy </a> | <a href="term.html">Terms of Service</a> </p>
+                <p><a href="noticeprivacy.html">Do Not Sell My Personal Information</a> </p>
+            </div>
+
+            <p>Lose It! is among the federally registered trademarks of FitNow, Inc., and may not be used by third
+                parties without explicit permission.</p>
+        </div>
+    </footer>
+
+    <script>
+        var array = [];
+
+        if (localStorage.getItem("array")) {
+            array = JSON.parse(localStorage.getItem("array"));
+        }
+
+        document.querySelector("#loginPage button").addEventListener("click", function (event) {
+            event.preventDefault();
+            var obj = {};
+            var name = document.querySelector("#name").value;
+            var email = document.querySelector("#email").value;
+            var password = document.querySelector("#password").value;
+
+            if (name.length > 4 && email.length > 4 && password.length > 4) {
+                obj.name = name;
+                obj.email = email;
+                obj.password = password;
+
+                array.push(obj);
+                localStorage.setItem("array", JSON.stringify(array));
+                alert("Successful Create Account and Please login now...");
+                window.location.href = "login.html";
+            } else {
+                alert("Please 4 character more than write");
+            }
+
+        });
+
+
+        document.querySelector("#loginPage #applelogin").addEventListener("click", function () {
+            window.location.href = "https://appleid.apple.com/auth/authorize?client_id=service.com.fitnow.loseit&scope=email+name&response_type=code+id_token&response_mode=form_post&state=eyJpIjoiNjQyM2ZhMDgtNmQ2Mi00NWVhLWEzMzctNTM0M2M5OTc1ZmVhIiwidSI6Imh0dHBzOi8vbG9zZWl0LmNvbS8iLCJzIjoiNzdjODQ3YWZjMzRjOWI3NjUzNDIxOWU4YmIyNjQ2MzAwMGY1ZDgyZTAwMDZiNGU2ZmMzYjg0YjRiYzYzODdkOCJ9&redirect_uri=https%3A%2F%2Fapi.loseit.com%2Faccount%2Fapple%2Fcallback";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Sumbit a request - Weight Loss That Fits</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html"><img src="img/logo.svg" alt="Lose it" /></a>
+            <button onclick="Message()">Ask a Question</button>
+        </div>
+    </header>
+
+<section id="contact">
+    <button onclick="Message()">Ask a Question</button>
+    <p>&copy; Lose It! Support</p>
+    <div id="helpbox">
+        <i class="fa-solid fa-x" id="close"></i>
+        <p>Hello, How can we help? </p>
+        <input type="text" placeholder="Type a Question..."  onkeypress="writeoneword()"/>
+        <div id="sendicon">
+            <i class="fa-regular fa-paper-plane" disabled></i>     
+        </div>
+    </div>
+    <i class="fa-solid fa-message" onclick="Message()"></i>
+</section>
+
+<script src="index.js"></script>
+</body>
+</html>
